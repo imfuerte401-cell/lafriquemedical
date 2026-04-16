@@ -37,28 +37,13 @@
     nav.classList.toggle('open');
     const isOpen = nav.classList.contains('open');
     toggle.setAttribute('aria-expanded', isOpen);
-    
-    // Animate hamburger to X
-    const spans = toggle.querySelectorAll('span');
-    if (isOpen) {
-      spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-      spans[1].style.opacity = '0';
-      spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
-    } else {
-      spans[0].style.transform = '';
-      spans[1].style.opacity = '';
-      spans[2].style.transform = '';
-    }
   });
 
   // Close nav when clicking a link
   nav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       nav.classList.remove('open');
-      const spans = toggle.querySelectorAll('span');
-      spans[0].style.transform = '';
-      spans[1].style.opacity = '';
-      spans[2].style.transform = '';
+      toggle.setAttribute('aria-expanded', 'false');
     });
   });
 })();
