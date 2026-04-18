@@ -1,8 +1,8 @@
 // L'Afrique Medical Alert — Admin JavaScript
 
 // Supabase Initialization
-const supabaseUrl = 'https://qcmbsyeppmuhsdlirqna.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFjbWJzeWVwcG11aHNkbGlycW5hIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY1NTUwMTEsImV4cCI6MjA5MjEzMTAxMX0.SZbKmSSNGHuoGKeQ7A0_c0FSpYmd239oKvll0s0K4qI';
+const supabaseUrl = 'VITE_SUPABASE_URL';
+const supabaseKey = 'VITE_SUPABASE_ANON_KEY';
 const _supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
 // Authentication Logic

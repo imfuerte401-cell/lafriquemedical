@@ -1,0 +1,11 @@
+{
+  "name": "lafriquemedical",
+  "version": "1.0.0",
+  "description": "L'Afrique Medical Alert Website",
+  "scripts": {
+    "build": "node inject-env.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
