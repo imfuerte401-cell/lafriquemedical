@@ -1,5 +1,12 @@
 // L'Afrique Medical Alert — App JavaScript
 
+// Supabase Initialization
+const supabaseUrl = 'https://qcmbsyeppmuhsdlirqna.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFjbWJzeWVwcG11aHNkbGlycW5hIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY1NTUwMTEsImV4cCI6MjA5MjEzMTAxMX0.SZbKmSSNGHuoGKeQ7A0_c0FSpYmd239oKvll0s0K4qI';
+const _supabase = (typeof window.supabase !== 'undefined') 
+  ? window.supabase.createClient(supabaseUrl, supabaseKey) 
+  : null;
+
 // Dark/Light Theme Toggle
 (function () {
   const toggles = document.querySelectorAll('[data-theme-toggle]');
@@ -83,13 +90,50 @@
 })();
 
 // Form submission handler
-function handleSubmit(e) {
+async function handleSubmit(e) {
   e.preventDefault();
   const form = document.getElementById('bookingForm');
   const success = document.getElementById('formSuccess');
+  const submitBtn = form ? form.querySelector('button[type="submit"]') : null;
+
   if (form && success) {
-    form.style.display = 'none';
-    success.style.display = 'block';
+    const formData = new FormData(form);
+    const data = {
+      first_name: formData.get('firstName'),
+      last_name: formData.get('lastName'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      service: formData.get('service'),
+      message: formData.get('message'),
+      created_at: new Date().toISOString()
+    };
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+    }
+
+    try {
+      if (!_supabase) {
+        throw new Error('Supabase is not initialized. Please provide a valid URL and Key.');
+      }
+
+      const { error } = await _supabase
+        .from('consultation_requests')
+        .insert([data]);
+
+      if (error) throw error;
+
+      form.style.display = 'none';
+      success.style.display = 'block';
+    } catch (err) {
+      console.error('Error submitting form:', err.message);
+      alert('There was an error submitting your request. Please try again or contact us directly.');
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Request';
+      }
+    }
   }
 }
 
