@@ -1,8 +1,8 @@
 // L'Afrique Medical Alert — App JavaScript
 
 // Supabase Initialization
-const supabaseUrl = 'VITE_SUPABASE_URL';
-const supabaseKey = 'VITE_SUPABASE_ANON_KEY';
+const supabaseUrl = '[[SUPABASE_URL]]';
+const supabaseKey = '[[SUPABASE_KEY]]';
 const _supabase = (typeof window.supabase !== 'undefined') 
   ? window.supabase.createClient(supabaseUrl, supabaseKey) 
   : null;

@@ -1,20 +1,20 @@
 // L'Afrique Medical Alert — Admin JavaScript
 
 // Supabase Initialization
-const supabaseUrl = 'VITE_SUPABASE_URL';
-const supabaseKey = 'VITE_SUPABASE_ANON_KEY';
+const supabaseUrl = '[[SUPABASE_URL]]';
+const supabaseKey = '[[SUPABASE_KEY]]';
 const _supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
 // Authentication Logic
 const AUTH_CREDENTIALS = {
-    username: 'ADMIN_USERNAME',
-    password: 'ADMIN_PASSWORD'
+    username: '[[ADMIN_USER]]',
+    password: '[[ADMIN_PASS]]'
 };
 
 console.log('Admin Init: Credentials loaded', { 
-    userSet: AUTH_CREDENTIALS.username !== 'ADMIN_USERNAME',
-    passSet: AUTH_CREDENTIALS.password !== 'ADMIN_PASSWORD',
-    buildTime: 'BUILD_TIMESTAMP'
+    userPrefix: AUTH_CREDENTIALS.username.substring(0, 1) + '...',
+    userLength: AUTH_CREDENTIALS.username.length,
+    buildTime: '[[BUILD_TIME]]'
 });
 
 function checkAuth() {

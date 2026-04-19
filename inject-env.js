@@ -25,13 +25,13 @@ filesToUpdate.forEach(file => {
   if (fs.existsSync(filePath)) {
     let content = fs.readFileSync(filePath, 'utf8');
     
-    // Simple but absolute replacement
+    // Absolute replacement of unique placeholders
     const newContent = content
-      .replace(/VITE_SUPABASE_URL/g, supabaseUrl)
-      .replace(/VITE_SUPABASE_ANON_KEY/g, supabaseKey)
-      .replace(/ADMIN_USERNAME/g, adminUser)
-      .replace(/ADMIN_PASSWORD/g, adminPass)
-      .replace(/BUILD_TIMESTAMP/g, new Date().toLocaleString());
+      .replace(/\[\[SUPABASE_URL\]\]/g, supabaseUrl)
+      .replace(/\[\[SUPABASE_KEY\]\]/g, supabaseKey)
+      .replace(/\[\[ADMIN_USER\]\]/g, adminUser)
+      .replace(/\[\[ADMIN_PASS\]\]/g, adminPass)
+      .replace(/\[\[BUILD_TIME\]\]/g, new Date().toLocaleString());
 
     if (content !== newContent) {
       fs.writeFileSync(filePath, newContent);
