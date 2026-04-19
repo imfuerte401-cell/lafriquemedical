@@ -24,7 +24,19 @@ function showAdminContent() {
     document.getElementById('loginOverlay').style.display = 'none';
     document.querySelector('.admin-container').style.display = 'flex';
     fetchRequests();
-    // Auto-refresh every 30 seconds only if authenticated
+    
+    // Supabase Realtime Subscription for live sync
+    _supabase
+        .channel('public:consultation_requests')
+        .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'consultation_requests' }, payload => {
+            console.log('New request received!', payload.new);
+            allRequests.unshift(payload.new);
+            renderRequestsList(allRequests);
+            // Play a notification sound (optional)
+        })
+        .subscribe();
+
+    // Still keep 30s polling as backup
     setInterval(fetchRequests, 30000);
 }
 
