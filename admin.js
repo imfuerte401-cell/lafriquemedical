@@ -13,7 +13,8 @@ const AUTH_CREDENTIALS = {
 
 console.log('Admin Init: Credentials loaded', { 
     userSet: AUTH_CREDENTIALS.username !== 'ADMIN_USERNAME',
-    passSet: AUTH_CREDENTIALS.password !== 'ADMIN_PASSWORD' 
+    passSet: AUTH_CREDENTIALS.password !== 'ADMIN_PASSWORD',
+    buildTime: 'BUILD_TIMESTAMP'
 });
 
 function checkAuth() {

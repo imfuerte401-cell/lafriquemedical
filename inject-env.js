@@ -24,13 +24,21 @@ filesToUpdate.forEach(file => {
   const filePath = path.join(__dirname, file);
   if (fs.existsSync(filePath)) {
     let content = fs.readFileSync(filePath, 'utf8');
-    // More robust replacement using regex to match placeholders even if they are in quotes
-    content = content.replace(/['"]?VITE_SUPABASE_URL['"]?/g, `'${supabaseUrl}'`);
-    content = content.replace(/['"]?VITE_SUPABASE_ANON_KEY['"]?/g, `'${supabaseKey}'`);
-    content = content.replace(/['"]?ADMIN_USERNAME['"]?/g, `'${adminUser}'`);
-    content = content.replace(/['"]?ADMIN_PASSWORD['"]?/g, `'${adminPass}'`);
-    fs.writeFileSync(filePath, content);
-    console.log(`Updated ${file} with environment variables`);
+    
+    // Simple but absolute replacement
+    const newContent = content
+      .replace(/VITE_SUPABASE_URL/g, supabaseUrl)
+      .replace(/VITE_SUPABASE_ANON_KEY/g, supabaseKey)
+      .replace(/ADMIN_USERNAME/g, adminUser)
+      .replace(/ADMIN_PASSWORD/g, adminPass)
+      .replace(/BUILD_TIMESTAMP/g, new Date().toLocaleString());
+
+    if (content !== newContent) {
+      fs.writeFileSync(filePath, newContent);
+      console.log(`✅ Updated ${file} successfully`);
+    } else {
+      console.log(`⚠️ No placeholders found in ${file}`);
+    }
   } else {
     console.warn(`Warning: ${file} not found`);
   }
