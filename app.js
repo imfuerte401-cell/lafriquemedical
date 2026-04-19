@@ -102,7 +102,7 @@ async function handleSubmit(e) {
       first_name: formData.get('firstName'),
       last_name: formData.get('lastName'),
       email: formData.get('email'),
-      phone: formData.get('phone'),
+      phone: formData.get('countryCode') + formData.get('phone').replace(/^0+/, ''),
       service: formData.get('service'),
       message: formData.get('message'),
       created_at: new Date().toISOString()
