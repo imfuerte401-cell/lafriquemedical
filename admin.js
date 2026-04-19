@@ -6,18 +6,6 @@ const supabaseKey = '[[SUPABASE_KEY]]';
 const _supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
 // Authentication Logic
-const AUTH_CREDENTIALS = {
-    username: '[[ADMIN_USER]]',
-    password: '[[ADMIN_PASS]]'
-};
-
-console.log('Admin Init: Credentials loaded', { 
-    userPrefix: AUTH_CREDENTIALS.username.substring(0, 1) + '...',
-    userLength: AUTH_CREDENTIALS.username.length,
-    passLength: AUTH_CREDENTIALS.password.length,
-    buildTime: '[[BUILD_TIME]]'
-});
-
 function checkAuth() {
     const session = sessionStorage.getItem('adminAuthenticated');
     if (session === 'true') {
@@ -39,32 +27,43 @@ function showAdminContent() {
             console.log('New request received!', payload.new);
             allRequests.unshift(payload.new);
             renderRequestsList(allRequests);
-            // Play a notification sound (optional)
         })
         .subscribe();
 
-    // Still keep 30s polling as backup
     setInterval(fetchRequests, 30000);
 }
 
 // Login Form Handling
-document.getElementById('loginForm').addEventListener('submit', (e) => {
+document.getElementById('loginForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     const user = document.getElementById('username').value.trim();
     const pass = document.getElementById('password').value.trim();
     const errorEl = document.getElementById('loginError');
+    const submitBtn = e.target.querySelector('button');
 
-    console.log('Login attempt:', {
-        enteredUser: user,
-        match: user === AUTH_CREDENTIALS.username && pass === AUTH_CREDENTIALS.password
-    });
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Verifying...';
 
-    if (user === AUTH_CREDENTIALS.username && pass === AUTH_CREDENTIALS.password) {
+    try {
+        const { data, error } = await _supabase
+            .from('admins')
+            .select('*')
+            .eq('username', user)
+            .eq('password', pass)
+            .single();
+
+        if (error || !data) {
+            throw new Error('Invalid username or password');
+        }
+
         sessionStorage.setItem('adminAuthenticated', 'true');
         errorEl.style.display = 'none';
         showAdminContent();
-    } else {
+    } catch (err) {
+        console.error('Login error:', err.message);
         errorEl.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Login';
     }
 });
 
