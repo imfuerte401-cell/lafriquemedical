@@ -7,8 +7,8 @@ const _supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
 // Authentication Logic
 const AUTH_CREDENTIALS = {
-    username: 'Nii00',
-    password: 'NiiOKai$$'
+    username: 'ADMIN_USERNAME',
+    password: 'ADMIN_PASSWORD'
 };
 
 function checkAuth() {
