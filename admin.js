@@ -11,6 +11,11 @@ const AUTH_CREDENTIALS = {
     password: 'ADMIN_PASSWORD'
 };
 
+console.log('Admin Init: Credentials loaded', { 
+    userSet: AUTH_CREDENTIALS.username !== 'ADMIN_USERNAME',
+    passSet: AUTH_CREDENTIALS.password !== 'ADMIN_PASSWORD' 
+});
+
 function checkAuth() {
     const session = sessionStorage.getItem('adminAuthenticated');
     if (session === 'true') {
@@ -46,6 +51,11 @@ document.getElementById('loginForm').addEventListener('submit', (e) => {
     const user = document.getElementById('username').value;
     const pass = document.getElementById('password').value;
     const errorEl = document.getElementById('loginError');
+
+    console.log('Login attempt:', {
+        enteredUser: user,
+        match: user === AUTH_CREDENTIALS.username && pass === AUTH_CREDENTIALS.password
+    });
 
     if (user === AUTH_CREDENTIALS.username && pass === AUTH_CREDENTIALS.password) {
         sessionStorage.setItem('adminAuthenticated', 'true');

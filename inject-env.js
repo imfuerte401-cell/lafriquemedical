@@ -8,6 +8,13 @@ const supabaseKey = process.env.VITE_SUPABASE_ANON_KEY;
 const adminUser = process.env.ADMIN_USERNAME;
 const adminPass = process.env.ADMIN_PASSWORD;
 
+console.log('--- Environment Check ---');
+console.log('VITE_SUPABASE_URL:', supabaseUrl ? 'Set' : 'MISSING');
+console.log('VITE_SUPABASE_ANON_KEY:', supabaseKey ? `Set (Length: ${supabaseKey.length})` : 'MISSING');
+console.log('ADMIN_USERNAME:', adminUser ? `Set (Length: ${adminUser.length})` : 'MISSING');
+console.log('ADMIN_PASSWORD:', adminPass ? `Set (Length: ${adminPass.length})` : 'MISSING');
+console.log('-------------------------');
+
 if (!supabaseUrl || !supabaseKey || !adminUser || !adminPass) {
   console.error('Error: All environment variables (VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY, ADMIN_USERNAME, ADMIN_PASSWORD) must be set');
   process.exit(1);
