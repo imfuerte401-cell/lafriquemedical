@@ -327,8 +327,8 @@
       <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#075e54" stroke-width="2" style="margin-bottom: 20px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
       <h2>Admin Login</h2>
       <form id="loginForm" class="login-form">
-        <input type="text" id="username" placeholder="Username" required>
-        <input type="password" id="password" placeholder="Password" required>
+        <input type="text" id="username" placeholder="Username" autocomplete="username" required>
+        <input type="password" id="password" placeholder="Password" autocomplete="current-password" required>
         <button type="submit" class="login-btn">Login</button>
       </form>
       <p id="loginError" style="color: #e74c3c; margin-top: 15px; display: none;">Invalid username or password.</p>
