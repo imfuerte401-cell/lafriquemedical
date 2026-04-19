@@ -17,10 +17,11 @@ filesToUpdate.forEach(file => {
   const filePath = path.join(__dirname, file);
   if (fs.existsSync(filePath)) {
     let content = fs.readFileSync(filePath, 'utf8');
-    content = content.replace(/VITE_SUPABASE_URL/g, supabaseUrl);
-    content = content.replace(/VITE_SUPABASE_ANON_KEY/g, supabaseKey);
-    content = content.replace(/ADMIN_USERNAME/g, adminUser);
-    content = content.replace(/ADMIN_PASSWORD/g, adminPass);
+    // More robust replacement using regex to match placeholders even if they are in quotes
+    content = content.replace(/['"]VITE_SUPABASE_URL['"]/g, `'${supabaseUrl}'`);
+    content = content.replace(/['"]VITE_SUPABASE_ANON_KEY['"]/g, `'${supabaseKey}'`);
+    content = content.replace(/['"]ADMIN_USERNAME['"]/g, `'${adminUser}'`);
+    content = content.replace(/['"]ADMIN_PASSWORD['"]/g, `'${adminPass}'`);
     fs.writeFileSync(filePath, content);
     console.log(`Updated ${file} with environment variables`);
   } else {
