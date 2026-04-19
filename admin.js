@@ -14,6 +14,7 @@ const AUTH_CREDENTIALS = {
 console.log('Admin Init: Credentials loaded', { 
     userPrefix: AUTH_CREDENTIALS.username.substring(0, 1) + '...',
     userLength: AUTH_CREDENTIALS.username.length,
+    passLength: AUTH_CREDENTIALS.password.length,
     buildTime: '[[BUILD_TIME]]'
 });
 
@@ -49,8 +50,8 @@ function showAdminContent() {
 // Login Form Handling
 document.getElementById('loginForm').addEventListener('submit', (e) => {
     e.preventDefault();
-    const user = document.getElementById('username').value;
-    const pass = document.getElementById('password').value;
+    const user = document.getElementById('username').value.trim();
+    const pass = document.getElementById('password').value.trim();
     const errorEl = document.getElementById('loginError');
 
     console.log('Login attempt:', {
