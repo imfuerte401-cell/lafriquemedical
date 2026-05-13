@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Psychotherapy & Counseling — L'Afrique Medical Alert</title>
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@300,400,500,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./base.css">
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    .therapy-hero {
+      background: var(--color-surface);
+      padding: var(--space-20) 0;
+      border-bottom: 1px solid var(--color-divider);
+    }
+
+    .safe-space-card {
+      background: var(--color-surface-2);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-12);
+      text-align: center;
+      max-width: var(--content-default);
+      margin: 0 auto;
+      border: 1px solid var(--color-divider);
+    }
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-8);
+      margin-top: var(--space-16);
+    }
+
+    .support-card {
+      padding: var(--space-10);
+      background: var(--color-surface);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .quote-box {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-style: italic;
+      color: var(--color-text-muted);
+      text-align: center;
+      margin: var(--space-16) 0;
+      padding: var(--space-10);
+      border-top: 1px solid var(--color-divider);
+      border-bottom: 1px solid var(--color-divider);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="./index.html" class="logo" aria-label="L'Afrique Medical Alert Home">
+        <img src="assets/logo.jpg" alt="L'Afrique Medical Alert" width="36" height="36" style="border-radius: 8px; object-fit: cover;">
+        <div class="logo-text">L'Afrique<br><span>Medical Alert</span></div>
+      </a>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./services.html">Services</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./labease.html">LabEase</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+          <li>
+            <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+          </li>
+          <li><a href="./contact.html" class="nav-cta">Book Consultation</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="therapy-hero">
+      <div class="container fade-in">
+        <div class="safe-space-card">
+          <div class="section-label">Mental Well-being</div>
+          <h1 class="section-title">A Safe Space for Your <span class="highlight">Mind</span></h1>
+          <p class="section-subtitle" style="margin: 0 auto;">Navigate life's challenges with professional, confidential, and compassionate psychotherapy. You don't have to walk this path alone.</p>
+          <div style="margin-top: var(--space-8);">
+            <a href="./contact.html" class="btn btn-primary btn-lg">Begin Your Journey</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="about-grid" style="align-items: center;">
+          <div class="about-image fade-in">
+            <img src="./assets/psychotherapist-service.jpg" alt="Counseling Session" style="border-radius: var(--radius-xl); box-shadow: var(--shadow-lg);">
+          </div>
+          <div class="fade-in">
+            <h2 class="section-title">Confidential & Compassionate Support</h2>
+            <p>Our licensed psychotherapists provide evidence-based counseling to help you manage anxiety, depression, relationship issues, and the everyday stresses of modern life.</p>
+            <p style="margin-top: var(--space-4);">We offer a variety of therapeutic approaches tailored to your unique needs, available through secure video calls or in-person sessions.</p>
+          </div>
+        </div>
+
+        <div class="quote-box fade-in">
+          "Mental health is not a destination, but a process. It's about how you drive, not where you're going."
+        </div>
+
+        <div style="text-align: center;">
+          <div class="section-label">Our Approach</div>
+          <h2 class="section-title">How We Can Help</h2>
+        </div>
+
+        <div class="support-grid">
+          <div class="support-card fade-in">
+            <h3>Individual Counseling</h3>
+            <p>One-on-one sessions focused on personal growth, self-discovery, and managing specific mental health challenges.</p>
+          </div>
+          <div class="support-card fade-in">
+            <h3>Relationship Support</h3>
+            <p>Guided sessions for couples and families to improve communication, resolve conflicts, and strengthen bonds.</p>
+          </div>
+          <div class="support-card fade-in">
+            <h3>Stress Management</h3>
+            <p>Practical tools and techniques to handle workplace stress, burnout, and life transitions.</p>
+          </div>
+          <div class="support-card fade-in">
+            <h3>Youth & Adolescent Care</h3>
+            <p>Specialized support for young people navigating the unique challenges of growth and identity.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="fade-in">Your Privacy is Our Priority</h2>
+        <p class="fade-in">All sessions are conducted with the highest standards of medical confidentiality and data security.</p>
+        <a href="./contact.html" class="btn btn-white btn-lg fade-in">Book a Confidential Session</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="./index.html" class="logo" aria-label="L'Afrique Medical Alert Home">
+            <img src="assets/logo.jpg" alt="L'Afrique Medical Alert" width="32" height="32" style="border-radius: 6px; object-fit: cover;">
+            <div class="logo-text">L'Afrique<br><span>Medical Alert</span></div>
+          </a>
+          <p>Quality medical care for every Ghanaian, powered by technology and compassion.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="./teleconsultations.html">Teleconsultations</a></li>
+            <li><a href="./medical-alert.html">Medical Alerts</a></li>
+            <li><a href="./massage-therapy.html">Massage Therapy</a></li>
+            <li><a href="./psychotherapy.html">Psychotherapy</a></li>
+            <li><a href="./pharmacy-services.html">Pharmacy Services</a></li>
+            <li><a href="./health-screening.html">Health Screening</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="./about.html">About Us</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://wa.me/233548179340" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 L'Afrique Medical Alert. All rights reserved.</p>
+        <p>Accra, Ghana</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>

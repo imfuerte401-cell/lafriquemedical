@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Alert System — L'Afrique Medical Alert</title>
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@300,400,500,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./base.css">
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    .alert-hero-modern {
+      background: linear-gradient(to bottom, var(--color-bg), var(--color-surface-2));
+      padding: var(--space-20) 0;
+      position: relative;
+    }
+
+    .device-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-16);
+      align-items: center;
+    }
+
+    .device-visual {
+      position: relative;
+      background: var(--color-primary-light);
+      border-radius: var(--radius-xl);
+      padding: var(--space-10);
+      display: flex;
+      justify-content: center;
+      box-shadow: inset 0 0 40px rgba(0,0,0,0.05);
+    }
+
+    .pulse-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      background: var(--color-primary);
+      border-radius: 50%;
+      opacity: 0.2;
+      animation: pulse 2s infinite;
+      z-index: 0;
+    }
+
+    @keyframes pulse {
+      0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.3; }
+      100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
+    }
+
+    .spec-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-divider);
+      padding: var(--space-6);
+      border-radius: var(--radius-lg);
+      display: flex;
+      gap: var(--space-4);
+      align-items: center;
+      margin-bottom: var(--space-4);
+    }
+
+    .spec-card-icon {
+      color: var(--color-primary);
+      background: var(--color-primary-light);
+      padding: var(--space-3);
+      border-radius: var(--radius-md);
+    }
+
+    .emergency-workflow {
+      background: var(--color-primary);
+      color: white;
+      padding: var(--space-16);
+      border-radius: var(--radius-xl);
+      margin-top: var(--space-16);
+    }
+
+    .workflow-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-8);
+      margin-top: var(--space-10);
+    }
+
+    .workflow-item h4 {
+      color: white;
+      margin-bottom: var(--space-2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="./index.html" class="logo" aria-label="L'Afrique Medical Alert Home">
+        <img src="assets/logo.jpg" alt="L'Afrique Medical Alert" width="36" height="36" style="border-radius: 8px; object-fit: cover;">
+        <div class="logo-text">L'Afrique<br><span>Medical Alert</span></div>
+      </a>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./services.html">Services</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./labease.html">LabEase</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+          <li>
+            <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+          </li>
+          <li><a href="./contact.html" class="nav-cta">Book Consultation</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="alert-hero-modern">
+      <div class="container">
+        <div class="device-grid">
+          <div class="fade-in">
+            <div class="section-label">Smart Safety Device</div>
+            <h1 class="section-title" style="font-size: var(--text-2xl);">Your Life-Saving <span class="highlight">Companion</span></h1>
+            <p>Our intelligent medical alert system ensures you are never alone. Whether it's a fall at home or a medical emergency on the street, help is just one click away.</p>
+            
+            <div style="margin-top: var(--space-8);">
+              <div class="spec-card">
+                <div class="spec-card-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div>
+                  <strong>24/7 Professional Monitoring</strong>
+                  <p style="font-size: var(--text-sm);">Direct connection to our medical response team.</p>
+                </div>
+              </div>
+              <div class="spec-card">
+                <div class="spec-card-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <strong>GPS Location Tracking</strong>
+                  <p style="font-size: var(--text-sm);">Responders know exactly where you are.</p>
+                </div>
+              </div>
+              <div class="spec-card">
+                <div class="spec-card-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                </div>
+                <div>
+                  <strong>Vital Signs Monitoring</strong>
+                  <p style="font-size: var(--text-sm);">Heart rate and health data tracked in real-time.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div style="margin-top: var(--space-10);">
+              <a href="./contact.html" class="btn btn-primary btn-lg">Order Your Device Today</a>
+            </div>
+          </div>
+          
+          <div class="device-visual fade-in">
+            <div class="pulse-overlay"></div>
+            <img src="./assets/medical-alert-device.png" alt="Medical Alert Device" style="position: relative; z-index: 1; max-width: 80%;">
+          </div>
+        </div>
+
+        <div class="emergency-workflow fade-in">
+          <h2 style="color: white; text-align: center;">How It Works in an Emergency</h2>
+          <div class="workflow-grid">
+            <div class="workflow-item">
+              <h4>1. Press SOS</h4>
+              <p>Simply hold the SOS button for 3 seconds. The device vibrates and calls our centre.</p>
+            </div>
+            <div class="workflow-item">
+              <h4>2. We Respond</h4>
+              <p>Our professional responders speak to you directly through the device and assess the situation.</p>
+            </div>
+            <div class="workflow-item">
+              <h4>3. Help is Sent</h4>
+              <p>We dispatch emergency services or contact your pre-set family members immediately.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: var(--space-12);">
+          <h2 class="section-title">Designed for Your Lifestyle</h2>
+        </div>
+        <div class="services-grid">
+          <div class="service-card fade-in">
+            <h3>Waterproof Design</h3>
+            <p>Wear it in the shower or during exercise without worry. Durable and ready for anything.</p>
+          </div>
+          <div class="service-card fade-in">
+            <h3>Long Battery Life</h3>
+            <p>Go up to 7 days on a single charge. Low battery alerts sent to you and your contacts.</p>
+          </div>
+          <div class="service-card fade-in">
+            <h3>Fall Detection</h3>
+            <p>Smart sensors automatically detect sudden falls and trigger an alert if you can't.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="fade-in">Give Your Family Peace of Mind</h2>
+        <p class="fade-in">The perfect solution for seniors, children, or anyone living with a medical condition.</p>
+        <a href="./contact.html" class="btn btn-white btn-lg fade-in">Request More Information</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="./index.html" class="logo" aria-label="L'Afrique Medical Alert Home">
+            <img src="assets/logo.jpg" alt="L'Afrique Medical Alert" width="32" height="32" style="border-radius: 6px; object-fit: cover;">
+            <div class="logo-text">L'Afrique<br><span>Medical Alert</span></div>
+          </a>
+          <p>Quality medical care for every Ghanaian, powered by technology and compassion.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="./teleconsultations.html">Teleconsultations</a></li>
+            <li><a href="./medical-alert.html">Medical Alerts</a></li>
+            <li><a href="./massage-therapy.html">Massage Therapy</a></li>
+            <li><a href="./psychotherapy.html">Psychotherapy</a></li>
+            <li><a href="./pharmacy-services.html">Pharmacy Services</a></li>
+            <li><a href="./health-screening.html">Health Screening</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="./about.html">About Us</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://wa.me/233548179340" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 L'Afrique Medical Alert. All rights reserved.</p>
+        <p>Accra, Ghana</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>

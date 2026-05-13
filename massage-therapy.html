@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Massage Therapy — L'Afrique Medical Alert</title>
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@300,400,500,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./base.css">
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    .zen-hero {
+      background: linear-gradient(to right, var(--color-surface-2), var(--color-primary-light));
+      padding: var(--space-20) 0;
+      text-align: center;
+    }
+
+    .wellness-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-12);
+      align-items: center;
+    }
+
+    .benefit-card-modern {
+      background: var(--color-surface);
+      padding: var(--space-8);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--color-divider);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+
+    .benefit-card-modern h3 {
+      color: var(--color-primary);
+    }
+
+    .wellness-image-wrapper {
+      position: relative;
+      border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .therapy-types {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-6);
+      margin-top: var(--space-10);
+    }
+
+    .therapy-pill {
+      background: var(--color-primary);
+      color: white;
+      padding: var(--space-3) var(--space-8);
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      box-shadow: var(--shadow-sm);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="./index.html" class="logo" aria-label="L'Afrique Medical Alert Home">
+        <img src="assets/logo.jpg" alt="L'Afrique Medical Alert" width="36" height="36" style="border-radius: 8px; object-fit: cover;">
+        <div class="logo-text">L'Afrique<br><span>Medical Alert</span></div>
+      </a>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./services.html">Services</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./labease.html">LabEase</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+          <li>
+            <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+          </li>
+          <li><a href="./contact.html" class="nav-cta">Book Consultation</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="zen-hero">
+      <div class="container fade-in">
+        <div class="section-label">Holistic Wellness</div>
+        <h1 class="section-title">Professional <span class="highlight">Massage Therapy</span></h1>
+        <p class="section-subtitle" style="margin: 0 auto;">Restore your body and calm your mind with our expert therapeutic massage services. Professional care delivered where you need it.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="wellness-grid">
+          <div class="fade-in">
+            <h2 class="section-title">Healing Through Touch</h2>
+            <p>Massage therapy is more than just relaxation. It is a vital component of physical rehabilitation, stress management, and overall wellness. Our licensed therapists use a variety of techniques to address muscle tension, improve circulation, and promote natural healing.</p>
+            
+            <div class="therapy-types">
+              <div class="therapy-pill">Deep Tissue</div>
+              <div class="therapy-pill">Swedish Massage</div>
+              <div class="therapy-pill">Sports Recovery</div>
+              <div class="therapy-pill">Aromatherapy</div>
+            </div>
+          </div>
+          <div class="wellness-image-wrapper fade-in">
+            <img src="./assets/massage-therapy.jpg" alt="Professional Massage Therapy" style="width: 100%; height: auto;">
+          </div>
+        </div>
+
+        <div style="margin-top: var(--space-20);">
+          <div class="section-label" style="text-align: center;">Benefits</div>
+          <h2 class="section-title" style="text-align: center;">Why Choose Massage Therapy?</h2>
+          
+          <div class="feature-showcase" style="margin-top: var(--space-10);">
+            <div class="benefit-card-modern fade-in">
+              <h3>Pain Management</h3>
+              <p>Relieve chronic pain, migraines, and muscle stiffness through targeted therapeutic pressure.</p>
+            </div>
+            <div class="benefit-card-modern fade-in">
+              <h3>Stress Reduction</h3>
+              <p>Lower cortisol levels and promote the release of endorphins for a calmer, more focused mind.</p>
+            </div>
+            <div class="benefit-card-modern fade-in">
+              <h3>Improved Mobility</h3>
+              <p>Increase flexibility and range of motion, perfect for athletes and post-recovery care.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="fade-in">Ready for a Session?</h2>
+        <p class="fade-in">Book an at-home or clinic-based massage with our licensed therapists today.</p>
+        <a href="./contact.html" class="btn btn-white btn-lg fade-in">Schedule Your Therapy</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="./index.html" class="logo" aria-label="L'Afrique Medical Alert Home">
+            <img src="assets/logo.jpg" alt="L'Afrique Medical Alert" width="32" height="32" style="border-radius: 6px; object-fit: cover;">
+            <div class="logo-text">L'Afrique<br><span>Medical Alert</span></div>
+          </a>
+          <p>Quality medical care for every Ghanaian, powered by technology and compassion.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="./teleconsultations.html">Teleconsultations</a></li>
+            <li><a href="./medical-alert.html">Medical Alerts</a></li>
+            <li><a href="./massage-therapy.html">Massage Therapy</a></li>
+            <li><a href="./psychotherapy.html">Psychotherapy</a></li>
+            <li><a href="./pharmacy-services.html">Pharmacy Services</a></li>
+            <li><a href="./health-screening.html">Health Screening</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="./about.html">About Us</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://wa.me/233548179340" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 L'Afrique Medical Alert. All rights reserved.</p>
+        <p>Accra, Ghana</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>

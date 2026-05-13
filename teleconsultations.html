@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teleconsultations — L'Afrique Medical Alert</title>
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@300,400,500,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./base.css">
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    /* Service Page Specific Enhancements */
+    .service-hero-alt {
+      padding: var(--space-20) 0;
+      background: radial-gradient(circle at top right, var(--color-primary-light), transparent), var(--color-bg);
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .service-hero-alt h1 {
+      font-size: var(--text-3xl);
+      max-width: 20ch;
+      margin: 0 auto var(--space-6);
+    }
+
+    .feature-showcase {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-8);
+      margin-top: var(--space-16);
+    }
+
+    .feature-box {
+      background: var(--color-surface);
+      padding: var(--space-10);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--color-divider);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-box:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--color-primary);
+    }
+
+    .feature-box-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--color-primary-light);
+      color: var(--color-primary);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-6);
+    }
+
+    .process-timeline {
+      max-width: var(--content-default);
+      margin: var(--space-16) auto;
+      position: relative;
+    }
+
+    .process-step {
+      display: flex;
+      gap: var(--space-10);
+      margin-bottom: var(--space-12);
+      position: relative;
+    }
+
+    .step-indicator {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      background: var(--color-primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-family: var(--font-display);
+      z-index: 2;
+    }
+
+    .process-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 48px;
+      left: 23px;
+      width: 2px;
+      height: calc(100% + var(--space-4));
+      background: var(--color-divider);
+    }
+
+    .step-content h3 {
+      margin-bottom: var(--space-2);
+      color: var(--color-primary);
+    }
+
+    .doctor-badge-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-4);
+      margin-top: var(--space-10);
+    }
+
+    .doctor-type-tag {
+      padding: var(--space-3) var(--space-6);
+      background: var(--color-surface-2);
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      text-align: center;
+      border: 1px solid var(--color-divider);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="./index.html" class="logo" aria-label="L'Afrique Medical Alert Home">
+        <img src="assets/logo.jpg" alt="L'Afrique Medical Alert" width="36" height="36" style="border-radius: 8px; object-fit: cover;">
+        <div class="logo-text">L'Afrique<br><span>Medical Alert</span></div>
+      </a>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./services.html">Services</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./labease.html">LabEase</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+          <li>
+            <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+          </li>
+          <li><a href="./contact.html" class="nav-cta">Book Consultation</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="service-hero-alt">
+      <div class="container fade-in">
+        <div class="section-label">Virtual Care Solutions</div>
+        <h1>Healthcare That <span class="highlight">Comes to You</span></h1>
+        <p class="section-subtitle" style="margin: 0 auto var(--space-10);">Skip the queue and the commute. Speak with qualified, licensed doctors from the comfort of your home or office.</p>
+        <div class="hero-buttons" style="justify-content: center;">
+          <a href="./contact.html" class="btn btn-primary btn-lg">Book Your Session Now</a>
+          <a href="#how-it-works" class="btn btn-outline btn-lg">How it Works</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="about-grid" style="align-items: center;">
+          <div class="fade-in">
+            <h2 class="section-title">Specialised Care at Your Fingertips</h2>
+            <p>Our teleconsultation service is more than just a phone call. It's a secure, clinical environment where you can receive expert medical attention for a wide range of health concerns.</p>
+            <div class="doctor-badge-grid">
+              <div class="doctor-type-tag">General Practitioners</div>
+              <div class="doctor-type-tag">Paediatricians</div>
+              <div class="doctor-type-tag">Gynaecologists</div>
+              <div class="doctor-type-tag">Dermatologists</div>
+              <div class="doctor-type-tag">Cardiologists</div>
+              <div class="doctor-type-tag">Mental Health Experts</div>
+            </div>
+          </div>
+          <div class="about-image fade-in">
+            <img src="./assets/hero-doctor.png" alt="Telehealth Consultation" width="600" height="450" style="border-radius: var(--radius-xl); box-shadow: var(--shadow-lg);">
+          </div>
+        </div>
+
+        <div class="feature-showcase">
+          <div class="feature-box fade-in">
+            <div class="feature-box-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            </div>
+            <h3>HD Video Calls</h3>
+            <p>Clear, secure video consultations that allow doctors to conduct visual assessments effectively.</p>
+          </div>
+          <div class="feature-box fade-in">
+            <div class="feature-box-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <h3>Digital Prescriptions</h3>
+            <p>Receive valid e-prescriptions directly on your phone, accepted at major pharmacies nationwide.</p>
+          </div>
+          <div class="feature-box fade-in">
+            <div class="feature-box-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <h3>Private & Secure</h3>
+            <p>Your health data is protected by end-to-end encryption and strict medical confidentiality standards.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how-it-works" style="background: var(--color-surface-2);">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: var(--space-12);">
+          <div class="section-label">The Process</div>
+          <h2 class="section-title">Getting Started is Easy</h2>
+        </div>
+
+        <div class="process-timeline">
+          <div class="process-step fade-in">
+            <div class="step-indicator">1</div>
+            <div class="step-content">
+              <h3>Request an Appointment</h3>
+              <p>Fill out our simple contact form or call our helpline to request a session. Tell us your symptoms and preferred time.</p>
+            </div>
+          </div>
+          <div class="process-step fade-in">
+            <div class="step-indicator">2</div>
+            <div class="step-content">
+              <h3>Matched with a Specialist</h3>
+              <p>Our triage team matches you with the right licensed doctor for your specific health concern within minutes.</p>
+            </div>
+          </div>
+          <div class="process-step fade-in">
+            <div class="step-indicator">3</div>
+            <div class="step-content">
+              <h3>The Consultation</h3>
+              <p>Connect via a secure link sent to your phone. Discuss your health, receive a diagnosis, and get a treatment plan.</p>
+            </div>
+          </div>
+          <div class="process-step fade-in">
+            <div class="step-indicator">4</div>
+            <div class="step-content">
+              <h3>Follow-up & Support</h3>
+              <p>Access your medical summary, prescriptions, and book follow-up sessions all in one place.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="fade-in">Experience Better Healthcare Today</h2>
+        <p class="fade-in">Join thousands of patients who have switched to the convenience of virtual care.</p>
+        <a href="./contact.html" class="btn btn-white btn-lg fade-in">Book a Consultation</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="./index.html" class="logo" aria-label="L'Afrique Medical Alert Home">
+            <img src="assets/logo.jpg" alt="L'Afrique Medical Alert" width="32" height="32" style="border-radius: 6px; object-fit: cover;">
+            <div class="logo-text">L'Afrique<br><span>Medical Alert</span></div>
+          </a>
+          <p>Quality medical care for every Ghanaian, powered by technology and compassion.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="./teleconsultations.html">Teleconsultations</a></li>
+            <li><a href="./medical-alert.html">Medical Alerts</a></li>
+            <li><a href="./massage-therapy.html">Massage Therapy</a></li>
+            <li><a href="./psychotherapy.html">Psychotherapy</a></li>
+            <li><a href="./pharmacy-services.html">Pharmacy Services</a></li>
+            <li><a href="./health-screening.html">Health Screening</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="./about.html">About Us</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://wa.me/233548179340" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 L'Afrique Medical Alert. All rights reserved.</p>
+        <p>Accra, Ghana</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>

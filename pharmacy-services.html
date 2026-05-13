@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pharmacy Services — L'Afrique Medical Alert</title>
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@300,400,500,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./base.css">
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    .pharmacy-hero {
+      background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-primary-light) 100%);
+      padding: var(--space-20) 0;
+    }
+
+    .pharmacy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-16);
+      align-items: center;
+    }
+
+    .pharmacist-visual {
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+      border: 8px solid var(--color-surface);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .service-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-6);
+      margin-top: var(--space-12);
+    }
+
+    .service-item-modern {
+      background: var(--color-surface);
+      padding: var(--space-8);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--color-divider);
+      transition: all 0.3s ease;
+    }
+
+    .service-item-modern:hover {
+      border-color: var(--color-primary);
+      background: var(--color-surface-2);
+    }
+
+    .icon-circle {
+      width: 48px;
+      height: 48px;
+      background: var(--color-primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-6);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="./index.html" class="logo" aria-label="L'Afrique Medical Alert Home">
+        <img src="assets/logo.jpg" alt="L'Afrique Medical Alert" width="36" height="36" style="border-radius: 8px; object-fit: cover;">
+        <div class="logo-text">L'Afrique<br><span>Medical Alert</span></div>
+      </a>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./services.html">Services</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./labease.html">LabEase</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+          <li>
+            <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+          </li>
+          <li><a href="./contact.html" class="nav-cta">Book Consultation</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="pharmacy-hero">
+      <div class="container fade-in">
+        <div class="pharmacy-grid">
+          <div>
+            <div class="section-label">Medication Management</div>
+            <h1 class="section-title" style="font-size: var(--text-2xl);">Your Health, Guided by <span class="highlight">Expertise</span></h1>
+            <p>Our licensed pharmacists are here to ensure your medication journey is safe, effective, and easy to manage. Expert advice is just a consultation away.</p>
+            <div style="margin-top: var(--space-8);">
+              <a href="./contact.html" class="btn btn-primary btn-lg">Consult a Pharmacist</a>
+            </div>
+          </div>
+          <div class="pharmacist-visual">
+            <img src="./assets/pharmacist-service.jpg" alt="Pharmacist Consultation" style="width: 100%; display: block;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div style="text-align: center; max-width: 60ch; margin: 0 auto;">
+          <h2 class="section-title">Comprehensive Pharmacy Support</h2>
+          <p>We provide more than just prescriptions. Our pharmacists partner with your doctors to provide a holistic view of your medication therapy.</p>
+        </div>
+
+        <div class="service-row">
+          <div class="service-item-modern fade-in">
+            <div class="icon-circle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Safety Reviews</h3>
+            <p>We review your entire medication list to identify potential drug interactions and ensure every prescription is appropriate for you.</p>
+          </div>
+
+          <div class="service-item-modern fade-in">
+            <div class="icon-circle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <h3>Adherence Support</h3>
+            <p>Struggling to stay on track? We provide tools and counseling to help you never miss a dose, ensuring better health outcomes.</p>
+          </div>
+
+          <div class="service-item-modern fade-in">
+            <div class="icon-circle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-7.6-10.6 8.5 8.5 0 0 1 8.5 6.8z"/><polyline points="16 12 12 8 8 12"/></svg>
+            </div>
+            <h3>Chronic Care</h3>
+            <p>Specialized management plans for conditions like diabetes and hypertension, focusing on long-term medication success.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--color-surface-2);">
+      <div class="container">
+        <div class="about-grid" style="align-items: center;">
+          <div class="fade-in">
+            <h2 class="section-title">Seamless Integration</h2>
+            <p>Our pharmacy services are directly linked to our teleconsultation platform. Your doctor and pharmacist work together in real-time, reducing errors and saving you time.</p>
+            <ul class="feature-list" style="margin-top: var(--space-6);">
+              <li>Direct electronic transmission of prescriptions</li>
+              <li>Automated refill reminders</li>
+              <li>Digital medication history at your fingertips</li>
+            </ul>
+          </div>
+          <div class="about-image fade-in">
+            <img src="./assets/services-flatlay.png" alt="Integrated Healthcare" style="border-radius: var(--radius-xl); filter: grayscale(10%) contrast(1.1);">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="fade-in">Need Clarity on Your Medications?</h2>
+        <p class="fade-in">Schedule a medication review with our licensed pharmaceutical team today.</p>
+        <a href="./contact.html" class="btn btn-white btn-lg fade-in">Book a Review</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="./index.html" class="logo" aria-label="L'Afrique Medical Alert Home">
+            <img src="assets/logo.jpg" alt="L'Afrique Medical Alert" width="32" height="32" style="border-radius: 6px; object-fit: cover;">
+            <div class="logo-text">L'Afrique<br><span>Medical Alert</span></div>
+          </a>
+          <p>Quality medical care for every Ghanaian, powered by technology and compassion.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="./teleconsultations.html">Teleconsultations</a></li>
+            <li><a href="./medical-alert.html">Medical Alerts</a></li>
+            <li><a href="./massage-therapy.html">Massage Therapy</a></li>
+            <li><a href="./psychotherapy.html">Psychotherapy</a></li>
+            <li><a href="./pharmacy-services.html">Pharmacy Services</a></li>
+            <li><a href="./health-screening.html">Health Screening</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="./about.html">About Us</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://wa.me/233548179340" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 L'Afrique Medical Alert. All rights reserved.</p>
+        <p>Accra, Ghana</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
